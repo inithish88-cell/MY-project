@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>I Love You ❤️</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #ffecd2, #fcb69f);
+            text-align: center;
+            padding-top: 60px;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        h1 {
+            color: #d84315;
+            cursor: pointer;
+        }
+
+        .top-message {
+            font-size: 22px;
+            color: #6a1b9a;
+            margin-bottom: 20px;
+            height: 30px;
+        }
+
+        .buttons {
+            margin-top: 40px;
+            display: none;
+            position: relative;
+        }
+
+        button {
+            padding: 12px 25px;
+            margin: 10px;
+            font-size: 16px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .yes {
+            background-color: #4caf50;
+            color: white;
+        }
+
+        .no {
+            background-color: #f44336;
+            color: white;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Message shown at the TOP -->
+    <div class="top-message" id="topResponse"></div>
+
+    <h1 onclick="showOptions()">I Love You ❤️</h1>
+
+    <div class="buttons" id="options">
+        <button class="yes" onclick="loveToo()">Love you too 😘💕</button>
+        <button class="no" id="noBtn" onmouseover="moveButton()">I Hate you 🤷‍♀️</button>
+    </div>
+
+    <script>
+        function showOptions() {
+            document.getElementById("options").style.display = "block";
+        }
+
+        function loveToo() {
+            document.getElementById("topResponse").innerHTML =
+                "💖 The best decision ever 💖";
+        }
+
+        function moveButton() {
+            const button = document.getElementById("noBtn");
+
+            const x = Math.random() * (window.innerWidth - 120);
+            const y = Math.random() * (window.innerHeight - 120);
+
+            button.style.left = x + "px";
+            button.style.top = y + "px";
+        }
+    </script>
+
+</body>
+</html>
